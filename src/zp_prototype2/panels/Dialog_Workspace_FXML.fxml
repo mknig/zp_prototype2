@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+
+<BorderPane fx:id="pane_Dialog" styleClass="sidePanel" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.Dialog_Workspace_FXMLController">
+  <center>
+    <VBox alignment="BOTTOM_LEFT" maxHeight="400.0" maxWidth="600.0" prefHeight="600.0" prefWidth="800.0">
+      <children>
+        <StackPane alignment="BASELINE_RIGHT" prefWidth="200.0">
+          <children>
+            <HBox alignment="BASELINE_RIGHT">
+              <children>
+                <StackPane alignment="BASELINE_RIGHT">
+                  <children>
+                    <Button id="btn_close" fx:id="btn_diag_close" alignment="CENTER" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleCloseAction" prefHeight="25.0" prefWidth="25.0" styleClass="closeButton">
+                      <graphic>
+                        <ImageView id="closeButton" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../resource/closeButton.png" preserveRatio="false" smooth="false" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <graphicTextGap>
+                        <Long fx:value="4" />
+                      </graphicTextGap>
+                    </Button>
+                  </children>
+                  <prefHeight>
+                    <Long fx:value="-1" />
+                  </prefHeight>
+                  <prefWidth>
+                    <Long fx:value="-1" />
+                  </prefWidth>
+                </StackPane>
+              </children>
+            </HBox>
+          </children>
+        </StackPane>
+        <StackPane id="StackPane">
+          <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+              <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="573.0000999999975" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" styleClass="diag_background" width="800.0" />
+                <HBox alignment="CENTER" layoutX="38.0" layoutY="33.0" prefHeight="513.0000999999975" prefWidth="724.0">
+                  <children>
+                    <ImageView fx:id="diag_ImageView" fitHeight="395.0625" fitWidth="526.7499423313569" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+                </HBox>
+                <VBox alignment="TOP_CENTER" prefWidth="800.0">
+                  <children>
+                    <HBox id="HBox" fx:id="hboxMessage" alignment="CENTER" spacing="5.0">
+                      <children>
+                        <Label fx:id="lblDialog" styleClass="diag_font" text="nice to see you...Loading..." />
+                        <HBox fx:id="vbox_imageLoad">
+                          <children>
+                            <Label fx:id="lbl_Count_Image_Loaded_Ready" styleClass="diag_font" text="0" textFill="WHITE" />
+                            <Label styleClass="diag_font" text="/">
+                              <textFill>
+                                <Color blue="0.625" green="0.625" red="0.625" fx:id="x1" />
+                              </textFill>
+                            </Label>
+                            <Label fx:id="lbl_Count_Image_Loaded" styleClass="diag_font" text="0" textFill="$x1" />
+                          </children>
+                          <prefHeight>
+                            <Long fx:value="-1" />
+                          </prefHeight>
+                          <prefWidth>
+                            <Long fx:value="-1" />
+                          </prefWidth>
+                        </HBox>
+                      </children>
+                    </HBox>
+                  </children>
+                  <layoutY>
+                    <Long fx:value="50" />
+                  </layoutY>
+                  <prefHeight>
+                    <Long fx:value="-1" />
+                  </prefHeight>
+                </VBox>
+                <ProgressIndicator id="progessbar" fx:id="progressBar" layoutX="344.0" layoutY="229.0" prefHeight="98.0" prefWidth="93.0" progress="0.0" />
+                <TextField id="messgaeBox" fx:id="messageBox" layoutX="54.0" layoutY="503.0" prefHeight="27.0" prefWidth="668.0" text="TextField" />
+                <VBox fx:id="vbox_diag_ImageLoad" alignment="CENTER" layoutX="1.0" prefHeight="304.0" prefWidth="800.0">
+                  <layoutY>
+                    <Long fx:value="90" />
+                  </layoutY>
+                </VBox>
+              </children>
+            </AnchorPane>
+            <WebView fx:id="webView" prefWidth="700.0" visible="false">
+              <prefHeight>
+                <Long fx:value="650" />
+              </prefHeight>
+            </WebView>
+          </children>
+        </StackPane>
+      </children>
+    </VBox>
+  </center>
+  <effect>
+    <DropShadow height="29.13577504385085" offsetX="10.0" offsetY="10.0" radius="14.057753284772236" spread="0.05555555555555555" width="29.09523809523809" />
+  </effect>
+  <maxHeight>
+    <Long fx:value="-1" />
+  </maxHeight>
+  <maxWidth>
+    <Long fx:value="-1" />
+  </maxWidth>
+  <minWidth>
+    <Long fx:value="-1" />
+  </minWidth>
+  <prefHeight>
+    <Long fx:value="-1" />
+  </prefHeight>
+  <prefWidth>
+    <Long fx:value="-1" />
+  </prefWidth>
+  <stylesheets>
+    <URL value="@../zp_prototype.css" />
+  </stylesheets>
+</BorderPane>

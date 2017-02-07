@@ -1,0 +1,85 @@
+
+
+/* --------------------------------------- */
+/* -------------- DEBUG -------------- */
+/* --------------------------------------- */
+
+/*provoke ERROR - CSS will not be applied 
+-fx-background-color:visited
+*/
+
+
+
+/* --------------------------------------- */
+/* -------------- Fonts -------------- */
+/* --------------------------------------- */
+
+.zp-logo
+{
+    -fx-font-family:"Segoe UI";
+    -fx-font-size: 24;
+
+    -fx-text-fill: derive(#a1bee6, -50%);
+    -fx-opacity: 0.9;
+}
+
+.zp-heading
+{
+    -fx-font-family:"Segoe UI";
+    -fx-font-size: 18;
+
+    -fx-text-fill: derive(#a1bee6, -50%);
+    -fx-opacity: 0.6;
+}
+
+.zp-label
+{
+    -fx-font-family: Segoe UI;
+    -fx-text-fill: gray;
+    -fx-font-size: 14;
+}
+
+.zp-text
+{
+    -fx-font-family: Segoe UI;
+    /*-fx-text-fill: gray;*/
+    -fx-font-size: 12;
+}
+
+.zp-head-font
+{
+    -fx-font-family: Segoe UI;
+    -fx-text-fill: gray;
+    -fx-font-size: 14;
+}
+
+
+
+.zp-Lbl_h1{
+    -fx-font-family:"Segoe UI";
+    -fx-font-size: 16;
+}
+
+
+.diag_font{
+
+    -fx-font-family:"Segoe UI";
+    -fx-font-size: 18;
+    -fx-text-fill: rgba(239,239,239,1.0);
+    -fx-opacity: 0.8;
+}
+
+
+/* --------------------------------------- */
+/* -------------- Diag -------------- */
+/* --------------------------------------- */
+
+
+
+.diag_background {
+    -fx-shape: "";
+    -fx-arc-height: 0;
+    -fx-arc-width: 0;
+    -fx-fill: rgba(71,71,71,0.9);
+}
+

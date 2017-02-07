@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../resource/text.properties?>
+<?scenebuilder-stylesheet ../zp_prototype.css?>
+
+<AnchorPane id="AnchorPane" fx:id="modeGridActions" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.Mode_Grid_FXMLController">
+  <children>
+    <VBox id="VBox" spacing="5.0">
+      <children>
+        <Label fx:id="lbl_layout_caption" alignment="TOP_LEFT" styleClass="zp-heading" text="dic_lbl_layout_caption" wrapText="true">
+          <graphicTextGap>
+            <Long fx:value="4" />
+          </graphicTextGap>
+          <prefHeight>
+            <Long fx:value="-1" />
+          </prefHeight>
+          <prefWidth>
+            <Long fx:value="220" />
+          </prefWidth>
+          <VBox.margin>
+            <Insets bottom="10.0" />
+          </VBox.margin>
+        </Label>
+        <VBox id="VBox" alignment="CENTER" spacing="5.0">
+          <children>
+            <VBox id="VBox" prefHeight="115.0" prefWidth="240.0" spacing="5.0">
+              <children>
+                <Label fx:id="lbl_orientation" styleClass="zp-label" text="dic_lbl_orientation" />
+                <ComboBox fx:id="orientationComboBox" editable="false" maxWidth="140.0" onAction="#handleOrientationComboBoxAction" prefHeight="23.0" prefWidth="140.0">
+                  <minWidth>
+                    <Long fx:value="60" />
+                  </minWidth>
+                </ComboBox>
+                <Label id="lbl_oriantation" fx:id="lbl_orientation_text" alignment="TOP_LEFT" prefHeight="78.0" prefWidth="227.0" styleClass="zp-text" text="dic_lbl_orientation_text" wrapText="true" />
+              </children>
+              <minHeight>
+                <Long fx:value="100" />
+              </minHeight>
+              <minWidth>
+                <Long fx:value="-1" />
+              </minWidth>
+            </VBox>
+            <VBox id="VBox" spacing="5.0">
+              <children>
+                <Label fx:id="lbl_number_row_col" styleClass="zp-label" text="dic_lbl_number_row_col" />
+                <ComboBox fx:id="rowNumberComboBox" editable="true" maxWidth="140.0" onAction="#handleRowNumberComboBoxAction" onMouseClicked="#handleRowNumberComboBoxAction_MouseClicked" prefHeight="23.0" prefWidth="140.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="1" />
+                      <String fx:value="2" />
+                      <String fx:value="3" />
+                      <String fx:value="4" />
+                      <String fx:value="5" />
+                      <String fx:value="6" />
+                      <String fx:value="7" />
+                      <String fx:value="8" />
+                      <String fx:value="9" />
+                      <String fx:value="10" />
+                      <String fx:value="11" />
+                      <String fx:value="12" />
+                      <String fx:value="13" />
+                      <String fx:value="14" />
+                      <String fx:value="15" />
+                      <String fx:value="16" />
+                      <String fx:value="17" />
+                      <String fx:value="18" />
+                      <String fx:value="19" />
+                      <String fx:value="20" />
+                      <String fx:value="21" />
+                      <String fx:value="22" />
+                      <String fx:value="23" />
+                      <String fx:value="24" />
+                      <String fx:value="25" />
+                      <String fx:value="26" />
+                      <String fx:value="27" />
+                      <String fx:value="28" />
+                      <String fx:value="29" />
+                      <String fx:value="30" />
+                      <String fx:value="35" />
+                      <String fx:value="40" />
+                      <String fx:value="41" />
+                      <String fx:value="42" />
+                      <String fx:value="43" />
+                      <String fx:value="44" />
+                      <String fx:value="45" />
+                      <String fx:value="46" />
+                      <String fx:value="47" />
+                      <String fx:value="48" />
+                      <String fx:value="49" />
+                      <String fx:value="50" />
+                      <String fx:value="60" />
+                      <String fx:value="80" />
+                      <String fx:value="100" />
+                    </FXCollections>
+                  </items>
+                  <minWidth>
+                    <Long fx:value="60" />
+                  </minWidth>
+                </ComboBox>
+                <CheckBox fx:id="checkBox_best_fit" mnemonicParsing="false" onAction="#handleCheckBox_Best_FitAction" selected="true" styleClass="zp-label" text="dic_best_fit" wrapText="true" />
+              </children>
+              <prefWidth>
+                <Long fx:value="240" />
+              </prefWidth>
+            </VBox>
+            <VBox prefHeight="35.0" prefWidth="240.0" />
+            <VBox id="VBox" alignment="CENTER" minHeight="71.0" prefHeight="78.0" prefWidth="146.0" spacing="5.0">
+              <children>
+                <VBox id="VBox" prefHeight="71.0" prefWidth="146.0" spacing="5.0">
+                  <children>
+                    <Label fx:id="lbl_frame" styleClass="zp-label" text="dic_lbl_frame">
+                      <VBox.margin>
+                        <Insets bottom="10.0" />
+                      </VBox.margin>
+                    </Label>
+                    <Slider fx:id="sliderBorder" minorTickCount="1" prefHeight="14.0" prefWidth="202.0" showTickLabels="true" showTickMarks="true">
+                      <blockIncrement>
+                        <Long fx:value="1" />
+                      </blockIncrement>
+                      <majorTickUnit>
+                        <Long fx:value="1" />
+                      </majorTickUnit>
+                      <max>
+                        <Long fx:value="10" />
+                      </max>
+                      <min>
+                        <Long fx:value="0" />
+                      </min>
+                      <value>
+                        <Long fx:value="0" />
+                      </value>
+                    </Slider>
+                  </children>
+                </VBox>
+                <VBox id="VBox" spacing="5.0" visible="false">
+                  <children>
+                    <Label fx:id="lbl_crop_all" styleClass="zp-label" text="dic_lbl_crop_all" />
+                    <Slider id="sliderBorder" fx:id="sliderCrop" minorTickCount="1">
+                      <blockIncrement>
+                        <Long fx:value="1" />
+                      </blockIncrement>
+                      <majorTickUnit>
+                        <Long fx:value="1" />
+                      </majorTickUnit>
+                      <max>
+                        <Long fx:value="50" />
+                      </max>
+                      <min>
+                        <Long fx:value="-50" />
+                      </min>
+                      <value>
+                        <Long fx:value="0" />
+                      </value>
+                    </Slider>
+                  </children>
+                </VBox>
+              </children>
+            </VBox>
+          </children>
+        </VBox>
+      </children>
+      <layoutX>
+        <Long fx:value="10" />
+      </layoutX>
+      <layoutY>
+        <Long fx:value="10" />
+      </layoutY>
+    </VBox>
+  </children>
+  <layoutX>
+    <Long fx:value="0" />
+  </layoutX>
+  <maxWidth>
+    <Long fx:value="250" />
+  </maxWidth>
+  <minHeight>
+    <Long fx:value="-1" />
+  </minHeight>
+  <prefHeight>
+    <Long fx:value="440" />
+  </prefHeight>
+  <prefWidth>
+    <Long fx:value="-1" />
+  </prefWidth>
+</AnchorPane>

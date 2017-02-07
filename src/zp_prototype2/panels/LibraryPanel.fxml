@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../resource/text.properties?>
+<?scenebuilder-stylesheet ../zp_prototype.css?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="193.99990000000253" prefWidth="199.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.LibraryPanelController">
+  <children>
+    <ScrollPane hbarPolicy="NEVER" layoutX="7.0" layoutY="41.0" prefHeight="140.0" prefWidth="185.0">
+      <content>
+        <FlowPane id="Content" fx:id="contentPane" maxHeight="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="137.9998779296875" prefWidth="185.0">
+          <maxWidth>
+            <Long fx:value="-1" />
+          </maxWidth>
+          <prefWrapLength>
+            <Long fx:value="185" />
+          </prefWrapLength>
+        </FlowPane>
+      </content>
+    </ScrollPane>
+    <Label layoutX="7.0" layoutY="12.0" styleClass="zp-heading" text="%Library_Heading" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,96 @@
+<project name="JavaFXSample" default="build and deploy" basedir="."
+         xmlns:fx="javafx:com.sun.javafx.tools.ant">
+
+    <target name="build and deploy">
+
+        <property name="applet.width" value="500"/>
+        <property name="applet.height" value="500"/>
+        <property name="application.title" value="ZP_Prototype2"/>
+        <property name="application.vendor" value="TestVendor"/>
+      
+        
+        <property name="build.classes.dir" value="/Users/mb_ta_michi/NetBeansProjects/ZP_Prototype2/build/classes/"/>
+        <property name="basedir" value="/Users/mb_ta_michi/NetBeansProjects/ZP_Prototype2/"/>
+        <property name="dist.dir" value="/Users/mb_ta_michi/NetBeansProjects/ZP_Prototype2_BUNDLE/"/>
+        <property name="javafx.lib.ant-javafx.jar" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/lib/ant-javafx.jar"/>
+
+
+        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+                 uri="javafx:com.sun.javafx.tools.ant"
+                 classpath="${javafx.lib.ant-javafx.jar}"/>
+
+
+
+        <fx:application id="zpAppID"
+                        name="ZP_Prototype2"
+                        mainClass="zp_prototype2.ZP_Prototype2"
+        />
+
+
+        <fx:resources id="appRes">
+            <fx:fileset dir="./../misc/libs2add" includes="*.jar"/>
+            <fx:fileset dir="${dist.dir}" includes="*.jar"/>
+        </fx:resources> 
+
+<!--
+        <fx:jar destfile="${dist.dir}/unsigned/ZP_Prototype2.jar">
+-->        
+  <fx:jar destfile="${dist.dir}/ZP_Prototype2.jar">             
+          
+            <fx:application refid="zpAppID"/>
+            <fx:resources refid="appRes"/>
+
+            <manifest>
+                <attribute name="Implementation-Vendor"
+                           value="${application.vendor}"/>
+                <attribute name="Implementation-Title"
+                           value="${application.title}"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+
+            <fileset dir="${build.classes.dir}"/>
+
+        </fx:jar>
+
+
+        <fx:signjar  keyStore="${basedir}/codeSign/keystore"
+                     destdir="${dist.dir}/signed" alias="test" storePass="levante" keyPass="levante">
+            <!--          
+            alias="codesign_2012_08_2013_08"
+            <fileset dir='${dist.dir}/unsigned/' includes='**/*.jar'/>
+   -->
+   <fileset dir='${dist.dir}' includes='**/*.jar'/>
+   
+        </fx:signjar>
+
+
+        <fx:deploy width="${applet.width}" height="${applet.height}"
+                   outdir="${dist.dir}" 
+                   embedJNLP="false"
+                   outfile="${application.title}"
+                   nativeBundles="all"
+        >
+            
+
+            <fx:permissions elevated="true" cachecertificates="true" />                 
+            
+            <fx:application refId="zpAppID"/>
+            <fx:resources refid="appRes"/>     
+            
+                  
+
+            <fx:info title="${application.title}"
+                     vendor="${application.vendor}"/>
+
+            
+            <!-- Custom JVM setup for application -->
+            <fx:platform>
+                <fx:jvmarg value="-Xmx512m"/>
+                <fx:jvmarg value="-Xms512m"/>
+                <property name="my.property" value="something"/>
+            </fx:platform>
+            
+        </fx:deploy>
+
+    </target>
+</project> 

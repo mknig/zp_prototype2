@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet ../zp_prototype.css?>
+
+<BorderPane fx:id="borderPane_Header" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#handleMouseDragged" onMousePressed="#handleMousePressed" prefHeight="85.0" prefWidth="1024.0" styleClass="headerPanel" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.HeaderPanelController">
+  <center>
+    <AnchorPane>
+      <children>
+        <HBox id="HBox" alignment="TOP_CENTER" layoutX="-10.0" prefHeight="85.0" prefWidth="774.0">
+          <children>
+            <VBox id="VBox" spacing="5.0">
+              <children>
+                <VBox id="VBox" spacing="5.0">
+                  <children>
+                    <HBox id="HBox" spacing="5.0">
+                      <children>
+                        <Label id="lbl_Output" fx:id="lbl_Medium_Output" text="dic_lbl_Medium_Output" />
+                        <Label id="lbl_Medium_Output" fx:id="medium_output" text="TODO" />
+                      </children>
+                    </HBox>
+                    <HBox id="HBox" spacing="5.0">
+                      <children>
+                        <Label id="lbl_dic_monitor_dimension_caption" fx:id="monitor_dimension_caption" text="dic_monitor_dimension_caption" />
+                        <Label fx:id="lbl_dimension_width" text="Label" />
+                        <Label id="monitor_dimension_height" fx:id="_DE_monitor_dimension_height" text="*" />
+                        <Label fx:id="lbl_dimension_height" text="Label" />
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="-1.0" prefWidth="-1.0">
+                      <children>
+                        <Label fx:id="lbl_dimension_output" text="dic_mon_average_dim">
+                          <HBox.margin>
+                            <Insets right="5.0" />
+                          </HBox.margin>
+                        </Label>
+                        <Label fx:id="monitor_dimension_output_width" text="Label" />
+                        <Label id="monitor_dimension_height" text="*" />
+                        <Label fx:id="monitor_dimension_output_height" text="Label" />
+                      </children>
+                    </HBox>
+                  </children>
+                  <prefHeight>
+                    <Long fx:value="-1" />
+                  </prefHeight>
+                  <prefWidth>
+                    <Long fx:value="-1" />
+                  </prefWidth>
+                </VBox>
+              </children>
+              <padding>
+                <Insets top="12.0" />
+              </padding>
+              <prefHeight>
+                <Long fx:value="75" />
+              </prefHeight>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox id="VBox" spacing="5.0">
+              <children>
+                <fx:include fx:id="imageMonitor" source="Panel_ImageMonitorFXML.fxml" />
+              </children>
+              <padding>
+                <Insets top="10.0" fx:id="x1" />
+              </padding>
+              <prefHeight>
+                <Long fx:value="75" />
+              </prefHeight>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox id="VBox" spacing="5.0">
+              <children>
+                <fx:include fx:id="zoom" source="ZoomPanel.fxml" styleClass="text" />
+              </children>
+              <padding>
+                <Insets top="8.0" fx:id="x2XX" />
+              </padding>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox id="VBox" alignment="CENTER" spacing="5.0">
+              <children>
+                <fx:include fx:id="panel_Selector" source="Panel_Selector.fxml">
+                  <padding>
+                    <Insets top="8.0" fx:id="x2XX" />
+                  </padding>
+                  <VBox.margin>
+                    <Insets top="5.0" />
+                  </VBox.margin>
+                </fx:include>
+              </children>
+            </VBox>
+            <VBox id="VBox" padding="$x1" spacing="5.0">
+              <prefHeight>
+                <Long fx:value="75" />
+              </prefHeight>
+            </VBox>
+          </children>
+          <minHeight>
+            <Long fx:value="-1" />
+          </minHeight>
+          <spacing>
+            <Long fx:value="20" />
+          </spacing>
+        </HBox>
+      </children>
+      <prefHeight>
+        <Long fx:value="-1" />
+      </prefHeight>
+      <prefWidth>
+        <Long fx:value="-1" />
+      </prefWidth>
+    </AnchorPane>
+  </center>
+  <left>
+    <AnchorPane fx:id="logo_anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+      <children>
+        <VBox id="VBox" alignment="CENTER" prefHeight="75.0" prefWidth="250.0" spacing="2.0" AnchorPane.topAnchor="5.0">
+          <children>
+            <HBox id="HBox" alignment="CENTER" spacing="5.0">
+              <children>
+                <Label onMouseClicked="#handleLogoClick" styleClass="zp-logo" text="Zoopraxi.">
+                  <font>
+                    <Font size="24.0" fx:id="x2" />
+                  </font>
+                </Label>
+                <ComboBox fx:id="cb_Language" onAction="#handleCB_LanguageAction" promptText="de" styleClass="fx-text-fill-chocolate, combo-box-chooseLang, zp-heading">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="de" />
+                      <String fx:value="en" />
+                      <String fx:value="pt" />
+                      <String fx:value="es" />
+                      <String fx:value="it" />
+                      <String fx:value="fr" />
+                      <String fx:value="ja" />
+                    </FXCollections>
+                  </items>
+                  <HBox.margin>
+                    <Insets />
+                  </HBox.margin>
+                </ComboBox>
+                <Label font="$x2" onMouseClicked="#handleLogoClick" styleClass="zp-logo" text="?" />
+              </children>
+            </HBox>
+            <Label id="zpLogo" fx:id="zpVersion" alignment="CENTER" onMouseClicked="#handleUpdate" prefWidth="250.0" styleClass="zp-label" text="Version 2.0.0">
+              <graphicTextGap>
+                <Long fx:value="4" />
+              </graphicTextGap>
+              <VBox.margin>
+                <Insets top="10.0" fx:id="x1" />
+              </VBox.margin>
+            </Label>
+          </children>
+        </VBox>
+      </children>
+      <prefHeight>
+        <Long fx:value="85" />
+      </prefHeight>
+      <prefWidth>
+        <Long fx:value="250" />
+      </prefWidth>
+    </AnchorPane>
+  </left>
+</BorderPane>

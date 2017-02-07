@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="-1.0" prefHeight="116.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.Panel_SelectorFXMLController">
+  <children>
+    <VBox id="VBox">
+      <children>
+        <HBox id="HBox" alignment="CENTER_LEFT" onMouseClicked="#handleUnSelectAll" spacing="5.0">
+          <children>
+            <Label fx:id="lbl_select_count_caption" prefHeight="-1.0" prefWidth="-1.0" text="dic_select_count_caption" />
+            <Label id="lbl_" fx:id="lbl_select_count" text="Label" />
+            <Label fx:id="lbl_cmd_deselect_all" text="dic_cmd_deselect_all" />
+            <HBox id="lgl_cmd_deselectall" fx:id="lbn_cmd_deselectall" HBox.hgrow="ALWAYS">
+              <prefHeight>
+                <Long fx:value="-1" />
+              </prefHeight>
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </HBox>
+            <Button minHeight="13.0" minWidth="7.0" mnemonicParsing="false" onAction="#handleUnSelectAll" prefHeight="20.0" prefWidth="20.0" styleClass="zp-button, circleButton" />
+          </children>
+          <padding>
+            <Insets top="5.0" />
+          </padding>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER_LEFT" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <Label id="lbl_select_all" fx:id="lbl_select_second" text="dic_select_second">
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </Label>
+            <HBox HBox.hgrow="ALWAYS" />
+            <Button id="btn_select_all" maxHeight="13.0" maxWidth="14.0" minHeight="7.0" minWidth="13.0" mnemonicParsing="false" onAction="#handleSelectEachSecond" prefHeight="13.0" prefWidth="13.0" styleClass="zp-button, circleButton" />
+          </children>
+          <padding>
+            <Insets top="10.0" />
+          </padding>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER_LEFT" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <Label fx:id="lbl_select_all" text="dic_select_all">
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </Label>
+            <HBox HBox.hgrow="ALWAYS" />
+            <Button fx:id="btn_select_all" minHeight="13.0" minWidth="13.0" mnemonicParsing="false" onAction="#handleSelectAll" prefHeight="13.0" prefWidth="13.0" styleClass="zp-button, circleButton" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER_LEFT" maxHeight="0.0" spacing="5.0" visible="false" />
+      </children>
+      <prefHeight>
+        <Long fx:value="-1" />
+      </prefHeight>
+      <spacing>
+        <Long fx:value="5" />
+      </spacing>
+    </VBox>
+  </children>
+  <maxHeight>
+    <Long fx:value="-1" />
+  </maxHeight>
+  <minHeight>
+    <Long fx:value="-1" />
+  </minHeight>
+  <minWidth>
+    <Long fx:value="-1" />
+  </minWidth>
+</AnchorPane>

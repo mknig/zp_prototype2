@@ -1,0 +1,27 @@
+/* not working */
+.image
+{
+    -fx-border-width: 1;
+    -fx-border-color: green;
+    -fx-border-style: solid;
+}
+
+.cancelButton 
+{
+    -fx-text-fill: white;
+    -fx-background-color: #a1bee6;
+    -fx-background-radius: 2;
+    -fx-border-color: derive(#97b4dc, -10%);
+    
+    -fx-border-radius: 2;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+}
+
+.cancelButton:hover
+{
+    -fx-border-color: black;
+}
+.closeButton:hover {
+    -fx-background-color: linear-gradient(to bottom, derive(#a1bee6, 20%), #a1bee6);
+}

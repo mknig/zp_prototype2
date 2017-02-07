@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.Panel_ImageMonitorFXMLController">
+  <children>
+    <VBox id="VBox" fx:id="imageMonitor">
+      <children>
+        <HBox id="HBox" spacing="5.0">
+          <children>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0">
+              <children>
+                <Label fx:id="lbl_image_load" text="dic_files_caption">
+                  <maxWidth>
+                    <Long fx:value="-1" />
+                  </maxWidth>
+                  <prefWidth>
+                    <Long fx:value="-1" />
+                  </prefWidth>
+                </Label>
+                <HBox id="HBox" alignment="CENTER" spacing="5.0" visible="false">
+                  <children>
+                    <Label fx:id="lbl_Count_Image_Loaded_Ready" text="0">
+                      <prefWidth>
+                        <Long fx:value="-1" />
+                      </prefWidth>
+                    </Label>
+                    <Label text="/" />
+                    <Label id="lbl_ImgLoaded" fx:id="lbl_Count_Image_Loaded" text="0">
+                      <prefWidth>
+                        <Long fx:value="-1" />
+                      </prefWidth>
+                    </Label>
+                  </children>
+                  <prefWidth>
+                    <Long fx:value="-1" />
+                  </prefWidth>
+                </HBox>
+              </children>
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+          <children>
+            <Label fx:id="lbl_file_in" text="dic_file_in">
+              <prefWidth>
+                <Long fx:value="50" />
+              </prefWidth>
+            </Label>
+            <Label fx:id="lbl_Count_Image_IN" text="000">
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </Label>
+          </children>
+          <prefWidth>
+            <Long fx:value="-1" />
+          </prefWidth>
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+          <children>
+            <Label fx:id="lbl_file_out" text="dic_file_out">
+              <prefWidth>
+                <Long fx:value="50" />
+              </prefWidth>
+            </Label>
+            <Label fx:id="lbl_Count_Image_OUT" text="000">
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </Label>
+            <Label>
+              <prefWidth>
+                <Long fx:value="20" />
+              </prefWidth>
+            </Label>
+            <RadioButton fx:id="radio_ShowOut" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleShowOut" selected="true" styleClass="label" text="dic_showOut" />
+          </children>
+          <prefWidth>
+            <Long fx:value="-1" />
+          </prefWidth>
+        </HBox>
+      </children>
+      <spacing>
+        <Long fx:value="5" />
+      </spacing>
+    </VBox>
+  </children>
+  <prefHeight>
+    <Long fx:value="-1" />
+  </prefHeight>
+</AnchorPane>

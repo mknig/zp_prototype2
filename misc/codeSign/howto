@@ -1,0 +1,4 @@
+
+
+<
+mac:codeSign mb_ta_michi$ keytool -importkeystore -srckeystore codeSign_comodo_exe.p12 -destkeystore keystore -srcstoretype pkcs12 -deststoretype JKS 

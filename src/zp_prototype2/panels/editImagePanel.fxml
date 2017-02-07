@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../resource/text.properties?>
+<?scenebuilder-stylesheet ../zp_prototype.css?>
+<?scenebuilder-stylesheet ../editImageWindow.css?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="377.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.EditImagePanelController">
+  <children>
+    <HBox layoutX="7.0" layoutY="295.0" minHeight="26.0" prefHeight="26.0" prefWidth="362.6666259765625" spacing="1.0">
+      <children>
+        <Button id="button1" minHeight="20.0" minWidth="20.0" onAction="#handleZoomOut" prefHeight="20.0" prefWidth="20.0" styleClass="zp-button, zoomButton">
+          <graphic>
+            <ImageView>
+              <image>
+                <Image url="@../resource/minus.png" preserveRatio="false" smooth="false" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Slider id="sliderHorizontal1" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="117.0" HBox.hgrow="ALWAYS" />
+        <Button id="button2" minHeight="20.0" minWidth="20.0" onAction="#handleZoomIn" prefHeight="20.0" prefWidth="20.0" styleClass="zp-button, zoomButton">
+          <graphic>
+            <ImageView>
+              <image>
+                <Image url="@../resource/plus.png" preserveRatio="false" smooth="false" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+      </children>
+      <padding>
+        <Insets bottom="7.0" left="7.0" right="7.0" />
+      </padding>
+    </HBox>
+    <HBox id="HBox" alignment="CENTER" layoutX="232.0" layoutY="328.0" spacing="10.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#handleOK" styleClass="zp-button, dark" text="%OK_Button_Label" />
+        <Button cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#handleCancel" styleClass="zp-button, dark, cancelButton" text="%Cancel_Button_Label" />
+      </children>
+    </HBox>
+    <HBox fx:id="imagePane" layoutX="14.0" layoutY="14.0" prefHeight="272.0" prefWidth="349.0" styleClass="imageContainer" />
+  </children>
+</AnchorPane>

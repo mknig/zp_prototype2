@@ -1,0 +1,81 @@
+<project name="JavaFXSample" default="build and deploy" basedir="."
+         xmlns:fx="javafx:com.sun.javafx.tools.ant">
+
+    <target name="build and deploy">
+
+        <property name="applet.width" value="500"/>
+        <property name="applet.height" value="500"/>
+        <property name="application.title" value="ZP_Prototype2"/>
+        <property name="application.vendor" value="TestVendor"/>
+      
+        <property name="build.classes.dir" value=".\..\build\classes"/>
+        <property name="basedir" value=".\..\"/>
+        <property name="dist.dir" value=".\..\..\ZP_Prototype2_BUNDLE"/>
+        
+        
+        <property name="javafx.lib.ant-javafx.jar" value="C:\dev\Java\jdk1.7.0_06\lib\ant-javafx.jar"/>
+
+
+
+        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+                uri="javafx:com.sun.javafx.tools.ant"
+                classpath="${javafx.lib.ant-javafx.jar}"/>
+
+
+
+        <fx:application id="zpAppID"
+                name="ZP_Prototype2"
+                mainClass="zp_prototype2.ZP_Prototype2"
+                />
+
+
+        <fx:resources id="appRes">
+            <fx:fileset dir="./../misc/libs2add" includes="*.jar"/>
+            <fx:fileset dir="${dist.dir}" includes="*.jar"/>
+        </fx:resources> 
+
+
+        <fx:jar destfile="${dist.dir}/ZP_Prototype2.jar">
+              
+                <fx:application refid="zpAppID"/>
+                <fx:resources refid="appRes"/>
+
+                <manifest>
+                    <attribute name="Implementation-Vendor"
+                            value="${application.vendor}"/>
+                    <attribute name="Implementation-Title"
+                            value="${application.title}"/>
+                    <attribute name="Implementation-Version" value="1.0"/>
+                </manifest>
+
+                <fileset dir="${build.classes.dir}"/>
+
+        </fx:jar>
+
+
+        <fx:deploy width="${applet.width}" height="${applet.height}"
+                outdir="${dist.dir}" 
+                embedJNLP="false"
+                outfile="${application.title}"
+                nativeBundles="all"
+                >
+
+                
+            <fx:application refId="zpAppID"/>
+            <fx:resources refid="appRes"/>            
+
+            <fx:info title="${application.title}"
+                    vendor="${application.vendor}"/>
+
+            
+             <!-- Custom JVM setup for application -->
+            <fx:platform>
+                <fx:jvmarg value="-Xmx1024m"/>
+                <fx:jvmarg value="-Xms1024m"/>
+                <property name="my.property" value="something"/>
+            </fx:platform>
+            
+        </fx:deploy>
+
+    </target>
+</project> 

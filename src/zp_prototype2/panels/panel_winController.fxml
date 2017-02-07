@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <AnchorPane id="close_anchor" layoutX="-212.0" layoutY="168.0" maxHeight="-1.0" minHeight="65.0" minWidth="-1.0" prefHeight="65.0" prefWidth="1024.0">
+      <children>
+        <Button id="hidePane" layoutY="46.0" mnemonicParsing="false" onAction="#handleHideAction" text="dic_hideMenu" visible="false" />
+        <Button id="closeStageButton" alignment="CENTER" layoutY="-1.0" minHeight="30.0" minWidth="35.0" mnemonicParsing="false" onAction="#handleCloseAction" prefHeight="20.0" prefWidth="20.0" visible="false" wrapText="true" AnchorPane.rightAnchor="42.0">
+          <graphic>
+            <ImageView id="closeButton">
+              <image>
+                <Image url="file:/X:/dev_nb_7/ZP_Prototype2/ZP_Prototype2/src/zp_prototype2/resource/closeButton.png" preserveRatio="true" smooth="true" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button id="closeStageButton" alignment="CENTER" minHeight="30.0" minWidth="35.0" mnemonicParsing="false" onAction="#handleLanguageAction" prefHeight="20.0" prefWidth="20.0" visible="false" wrapText="true" AnchorPane.rightAnchor="0.0">
+          <graphic>
+            <ImageView id="closeButton">
+              <image>
+                <Image url="file:/X:/dev_nb_7/ZP_Prototype2/ZP_Prototype2/src/zp_prototype2/resource/closeButton.png" preserveRatio="true" smooth="true" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>
