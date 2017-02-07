@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.Menu_accordion_PanelController">
+  <children>
+    <ScrollPane>
+      <content>
+        <Pane prefWidth="215.0">
+          <children>
+            <VBox>
+              <children>
+                <TitledPane id="x1" fx:id="titled_measure" text="Abmessung">
+                  <content>
+                    <fx:include fx:id="acc_mainPanel" source="MainPanel.fxml" />
+                  </content>
+                  <maxWidth>
+                    <Long fx:value="-1" />
+                  </maxWidth>
+                  <prefHeight>
+                    <Long fx:value="-1" />
+                  </prefHeight>
+                  <prefWidth>
+                    <Long fx:value="-1" />
+                  </prefWidth>
+                </TitledPane>
+                <TitledPane id="fileManager" fx:id="titled_file" expanded="false" text="Dateien">
+                  <content>
+                    <fx:include fx:id="acc_mainPanel" source="Panel_FileManager.fxml" />
+                  </content>
+                  <maxWidth>
+                    <Long fx:value="-1" />
+                  </maxWidth>
+                </TitledPane>
+                <TitledPane fx:id="titled_layout" expanded="false" text="Layout">
+                  <content>
+                    <fx:include fx:id="acc_grid" source="Mode_Grid_FXML.fxml" />
+                  </content>
+                  <maxWidth>
+                    <Long fx:value="-1" />
+                  </maxWidth>
+                </TitledPane>
+                <TitledPane fx:id="titled_checkout" expanded="false" text="Bestellen">
+                  <content>
+                    <fx:include fx:id="acc_donePanel" source="DonePanel.fxml" />
+                  </content>
+                  <maxHeight>
+                    <Long fx:value="-1" />
+                  </maxHeight>
+                  <maxWidth>
+                    <Long fx:value="-1" />
+                  </maxWidth>
+                </TitledPane>
+              </children>
+              <layoutX>
+                <Long fx:value="0" />
+              </layoutX>
+              <layoutY>
+                <Long fx:value="0" />
+              </layoutY>
+              <maxHeight>
+                <Long fx:value="-1" />
+              </maxHeight>
+              <maxWidth>
+                <Long fx:value="200" />
+              </maxWidth>
+              <minWidth>
+                <Long fx:value="-1" />
+              </minWidth>
+              <prefHeight>
+                <Long fx:value="-1" />
+              </prefHeight>
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </VBox>
+          </children>
+          <prefHeight>
+            <Long fx:value="-1" />
+          </prefHeight>
+        </Pane>
+      </content>
+      <layoutX>
+        <Long fx:value="0" />
+      </layoutX>
+      <layoutY>
+        <Long fx:value="0" />
+      </layoutY>
+      <minHeight>
+        <Long fx:value="500" />
+      </minHeight>
+      <minWidth>
+        <Long fx:value="200" />
+      </minWidth>
+      <prefHeight>
+        <Long fx:value="-1" />
+      </prefHeight>
+      <prefWidth>
+        <Long fx:value="-1" />
+      </prefWidth>
+    </ScrollPane>
+  </children>
+  <maxHeight>
+    <Long fx:value="-1" />
+  </maxHeight>
+  <maxWidth>
+    <Long fx:value="-1" />
+  </maxWidth>
+  <prefHeight>
+    <Long fx:value="200" />
+  </prefHeight>
+  <prefWidth>
+    <Long fx:value="200" />
+  </prefWidth>
+  <stylesheets>
+    <URL value="@../zp_prototype.css" />
+  </stylesheets>
+</AnchorPane>

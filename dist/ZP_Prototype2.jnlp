@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ZP_Prototype2.jnlp">
+  <information>
+    <title>ZP_Prototype2</title>
+    <vendor>C.Malz & M.Koenig GbR</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Xmx1024m "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApplication12.jar" size="12022623" download="eager" />
+    <jar href="lib/ScenicView_1_2_x.jar" size="590332" download="eager" />
+    <jar href="lib/ScenicView_1_3_0.jar" size="983488" download="eager" />
+    <jar href="lib/cglib-nodep-2.2.jar" size="322362" download="eager" />
+    <jar href="lib/commons-codec-1.6.jar" size="232771" download="eager" />
+    <jar href="lib/commons-io-2.4.jar" size="185140" download="eager" />
+    <jar href="lib/commons-lang.jar" size="207723" download="eager" />
+    <jar href="lib/commons-lang3-3.0.1.jar" size="312866" download="eager" />
+    <jar href="lib/commons-logging-1.1.1.jar" size="60686" download="eager" />
+    <jar href="lib/controlsfx-8.0.0-developer-preview-1-javadoc.jar" size="150261" download="eager" />
+    <jar href="lib/controlsfx-8.0.0-developer-preview-1-samples.jar" size="49346" download="eager" />
+    <jar href="lib/controlsfx-8.0.0-developer-preview-1.jar" size="185512" download="eager" />
+    <jar href="lib/dom4j-1.6.1.jar" size="313898" download="eager" />
+    <jar href="lib/fluent-hc-4.2.1.jar" size="21886" download="eager" />
+    <jar href="lib/httpasyncclient-4.0-beta3.jar" size="82425" download="eager" />
+    <jar href="lib/httpasyncclient-cache-4.0-beta3.jar" size="33839" download="eager" />
+    <jar href="lib/httpclient-4.2.1.jar" size="427022" download="eager" />
+    <jar href="lib/httpclient-cache-4.2.1.jar" size="115096" download="eager" />
+    <jar href="lib/httpcore-4.2.1.jar" size="223374" download="eager" />
+    <jar href="lib/httpcore-nio-4.2.2.jar" size="285592" download="eager" />
+    <jar href="lib/httpmime-4.2.1.jar" size="26598" download="eager" />
+    <jar href="lib/jdom-1.1.jar" size="153115" download="eager" />
+    <jar href="lib/jettison-1.2.jar" size="72478" download="eager" />
+    <jar href="lib/joda-time-1.6.jar" size="534827" download="eager" />
+    <jar href="lib/json-20080701.jar" size="37875" download="eager" />
+    <jar href="lib/kxml2-2.3.0.jar" size="43858" download="eager" />
+    <jar href="lib/kxml2-min-2.3.0.jar" size="10649" download="eager" />
+    <jar href="lib/log4j-1.2.17.jar" size="489883" download="eager" />
+    <jar href="lib/metadata-extractor-2.6.2.jar" size="174009" download="eager" />
+    <jar href="lib/slf4j-api-1.7.2.jar" size="26083" download="eager" />
+    <jar href="lib/stax-1.2.0.jar" size="179346" download="eager" />
+    <jar href="lib/stax-api-1.0.1.jar" size="26514" download="eager" />
+    <jar href="lib/wstx-asl-3.2.7.jar" size="520969" download="eager" />
+    <jar href="lib/xmlpull-1.1.3.1.jar" size="7188" download="eager" />
+    <jar href="lib/xmpcore.jar" size="89877" download="eager" />
+    <jar href="lib/xom-1.1.jar" size="431568" download="eager" />
+    <jar href="lib/xpp3_min-1.1.4c.jar" size="24956" download="eager" />
+    <jar href="lib/xstream-1.4.4.jar" size="483453" download="eager" />
+    <jar href="lib/xuggle-xuggler-5.4.jar" size="40318152" download="eager" />
+    <jar href="lib/xuggle-xuggler-arch-i686-w64-mingw32.jar" size="6282767" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ZP_Prototype2" >
+    <param name="requiredFXVersion" value="2.2+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="zp_prototype2.ZP_Prototype2"  name="ZP_Prototype2" />
+  <update check="always"/>
+</jnlp>

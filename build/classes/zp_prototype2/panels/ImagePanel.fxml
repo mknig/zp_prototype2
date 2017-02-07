@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../resource/text.properties?>
+<?scenebuilder-stylesheet ../zp_prototype.css?>
+
+<AnchorPane id="AnchorPane" fx:id="root" visible="true" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.ImagePanelController">
+  <children>
+    <VBox id="VBox" spacing="5.0">
+      <children>
+        <BorderPane>
+          <center>
+            <StackPane id="imagePane" fx:id="imagePaneX" prefHeight="240.0" prefWidth="220.0">
+              <children>
+                <BorderPane prefWidth="200.0">
+                  <center>
+                    <StackPane fx:id="imagePane" prefWidth="220.0">
+                      <children>
+                        <Label fx:id="lbl_noImageSelected" text="dic_lbl_noImageSelected" wrapText="true" />
+                      </children>
+                      <prefHeight>
+                        <Long fx:value="300" />
+                      </prefHeight>
+                    </StackPane>
+                  </center>
+                  <prefHeight>
+                    <Long fx:value="400" />
+                  </prefHeight>
+                  <top>
+                    <FlowPane fx:id="fp_ImagesSelected" onMouseClicked="#handleUnSelectAll" prefHeight="34.0">
+                      <children>
+                        <Label fx:id="lbl_imgedit_selected" />
+                      </children>
+                      <maxHeight>
+                        <Long fx:value="40" />
+                      </maxHeight>
+                      <maxWidth>
+                        <Long fx:value="220" />
+                      </maxWidth>
+                      <padding>
+                        <Insets top="5.0" />
+                      </padding>
+                      <prefWidth>
+                        <Long fx:value="220" />
+                      </prefWidth>
+                    </FlowPane>
+                  </top>
+                </BorderPane>
+              </children>
+            </StackPane>
+          </center>
+          <maxWidth>
+            <Long fx:value="-1" />
+          </maxWidth>
+          <prefHeight>
+            <Long fx:value="-1" />
+          </prefHeight>
+          <prefWidth>
+            <Long fx:value="220" />
+          </prefWidth>
+          <!--
+          <top>
+            <AnchorPane id="heading" fx:id="header" minHeight="71.0" prefHeight="71.00009999999747" prefWidth="220.0" styleClass="popupHeader">
+              <children>
+                <fx:include fx:id="panel_Selector" source="Panel_Selector.fxml">
+                  <padding>
+                    <Insets top="20.0" fx:id="x2XX" />
+                  </padding>
+                </fx:include>
+              </children>
+              <minWidth>
+                <Long fx:value="-1" />
+              </minWidth>
+            </AnchorPane>
+          </top>
+    -->
+          <top>
+            <AnchorPane id="AnchorPane" fx:id="ap_tabs" prefWidth="245.0">
+              <children>
+                <TabPane fx:id="tabs" disable="true" layoutY="0.0" prefWidth="220.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="5.0">
+                  <prefHeight>
+                    <Long fx:value="-1" />
+                  </prefHeight>
+                  <tabMaxWidth>
+                    <Long fx:value="210" />
+                  </tabMaxWidth>
+                  <tabMinHeight>
+                    <Long fx:value="20" />
+                  </tabMinHeight>
+                  <tabs>
+                    <Tab fx:id="tab_edit_image" text="dic_tab_edit_image">
+                      <content>
+                        <AnchorPane id="AnchorPane">
+                          <children>
+                            <ScrollPane prefHeight="160.0" vbarPolicy="ALWAYS" AnchorPane.topAnchor="5.0">
+                              <content>
+                                <AnchorPane id="Content" prefWidth="200.0">
+                                  <children>
+                                    <VBox spacing="5.0">
+                                      <children>
+                                        <HBox id="HBox" spacing="5.0">
+                                          <children>
+                                            <Label fx:id="lbl_rotate_caption" text="dic_rotate_caption">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Button mnemonicParsing="false" onAction="#handleRotateCWAction" styleClass="zp-button, small">
+                                              <graphic>
+                                                <ImageView id="rotate_cw3" smooth="false">
+                                                  <image>
+                                                    <Image url="@../resource/rotate_cw3.png" preserveRatio="true" smooth="true" />
+                                                  </image>
+                                                </ImageView>
+                                              </graphic>
+                                            </Button>
+                                            <Button id="button2" fx:id="rotateCCWButton" onAction="#handleRotateCCWAction" styleClass="small, zp-button">
+                                              <graphic>
+                                                <ImageView id="rotate_ccw3">
+                                                  <image>
+                                                    <Image url="@../resource/rotate_ccw3.png" preserveRatio="true" smooth="true" />
+                                                  </image>
+                                                </ImageView>
+                                              </graphic>
+                                            </Button>
+                                          </children>
+                                        </HBox>
+                                        <HBox id="HBox" spacing="5.0">
+                                          <children>
+                                            <Label id="lbl_rotate_caption" fx:id="lbl_edit_zoom_caption" text="dic_edit_zoom_caption">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Button mnemonicParsing="false" onAction="#handleZoomOut" prefHeight="20.0" prefWidth="28.0" styleClass="zp-button, circleButton">
+                                              <graphic>
+                                                <ImageView id="minus">
+                                                  <image>
+                                                    <Image url="@../resource/minus.png" preserveRatio="true" smooth="true" />
+                                                  </image>
+                                                </ImageView>
+                                              </graphic>
+                                              <maxWidth>
+                                                <Long fx:value="20" />
+                                              </maxWidth>
+                                              <minHeight>
+                                                <Long fx:value="-1" />
+                                              </minHeight>
+                                              <minWidth>
+                                                <Long fx:value="20" />
+                                              </minWidth>
+                                            </Button>
+                                            <Button contentDisplay="TOP" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#handleZoomIn" prefHeight="20.0" prefWidth="20.0" styleClass="zp-button, circleButton">
+                                              <graphic>
+                                                <ImageView id="plus" styleClass="zp-button">
+                                                  <image>
+                                                    <Image url="@../resource/plus.png" preserveRatio="true" smooth="true" />
+                                                  </image>
+                                                </ImageView>
+                                              </graphic>
+                                            </Button>
+                                            <Button fx:id="resetViewportButton" mnemonicParsing="false" onAction="#handleResetViewportAction" styleClass="zp-button, dark, small" text="dic_Viewport_Button_Label">
+                                              <maxWidth>
+                                                <Long fx:value="50" />
+                                              </maxWidth>
+                                            </Button>
+                                          </children>
+                                        </HBox>
+                                        <HBox id="HBox" spacing="5.0">
+                                          <children>
+                                            <Label fx:id="lbl_delete_caption" text="dic_delete_caption">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Button id="button1" fx:id="deleteButton" onAction="#handleDeleteAction" styleClass="small, zp-button">
+                                              <graphic>
+                                                <ImageView>
+                                                  <image>
+                                                    <Image url="@../resource/delete.png" preserveRatio="true" smooth="true" />
+                                                  </image>
+                                                </ImageView>
+                                              </graphic>
+                                            </Button>
+                                          </children>
+                                        </HBox>
+                                        <HBox id="HBox" spacing="5.0">
+                                          <children>
+                                            <Label id="lbl_rotate_caption" fx:id="lbl_edit_flip" text="lbl_edit_flip">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Button fx:id="btn_mirror_horizontal" mnemonicParsing="false" onAction="#handleFip_Horizontal_Action" styleClass="icons, small, zp-button" text="">
+                                              <graphicTextGap>
+                                                <Long fx:value="0" />
+                                              </graphicTextGap>
+                                            </Button>
+                                            <Button onAction="#handleFip_Vertical_Action" styleClass="icons, zp-button, small" text="">
+                                              <graphicTextGap>
+                                                <Long fx:value="4" />
+                                              </graphicTextGap>
+                                            </Button>
+                                          </children>
+                                        </HBox>
+                                        <HBox id="HBox" prefWidth="175.0" spacing="5.0">
+                                          <children>
+                                            <Label id="lbl_delete_caption" fx:id="lbl_copy_caption" text="dic_copy_caption">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Button id="button1" fx:id="copyButton" minHeight="-1.0" minWidth="-1.0" onAction="#handleCopyAction" prefHeight="-1.0" prefWidth="-1.0" styleClass="small, zp-button, icons_Entypo" text="" />
+                                          </children>
+                                        </HBox>
+                                      </children>
+                                      <prefHeight>
+                                        <Long fx:value="-1" />
+                                      </prefHeight>
+                                      <prefWidth>
+                                        <Long fx:value="-1" />
+                                      </prefWidth>
+                                    </VBox>
+                                  </children>
+                                  <minHeight>
+                                    <Long fx:value="-1" />
+                                  </minHeight>
+                                  <minWidth>
+                                    <Long fx:value="-1" />
+                                  </minWidth>
+                                  <prefHeight>
+                                    <Long fx:value="-1" />
+                                  </prefHeight>
+                                </AnchorPane>
+                              </content>
+                              <prefWidth>
+                                <Long fx:value="220" />
+                              </prefWidth>
+                            </ScrollPane>
+                          </children>
+                          <minHeight>
+                            <Long fx:value="-1" />
+                          </minHeight>
+                          <minWidth>
+                            <Long fx:value="-1" />
+                          </minWidth>
+                          <padding>
+                            <Insets />
+                          </padding>
+                          <prefHeight>
+                            <Long fx:value="-1" />
+                          </prefHeight>
+                          <prefWidth>
+                            <Long fx:value="230" />
+                          </prefWidth>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="tab_edit_frame" text="dic_tab_edit_frame">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefWidth="200.0">
+                          <children>
+                            <ScrollPane layoutY="5.0">
+                              <content>
+                                <AnchorPane id="AnchorPane">
+                                  <children>
+                                    <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                                      <children>
+                                        <VBox id="VBox" prefHeight="71.0" prefWidth="192.0" spacing="5.0">
+                                          <children>
+                                            <Label fx:id="lbl_frame" styleClass="zp-label" text="dic_lbl_frame_tab">
+                                              <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                              </VBox.margin>
+                                            </Label>
+                                            <Slider fx:id="sliderBorder" minorTickCount="1" prefHeight="14.0" prefWidth="202.0" showTickLabels="true" showTickMarks="true">
+                                              <blockIncrement>
+                                                <Long fx:value="1" />
+                                              </blockIncrement>
+                                              <majorTickUnit>
+                                                <Long fx:value="1" />
+                                              </majorTickUnit>
+                                              <max>
+                                                <Long fx:value="10" />
+                                              </max>
+                                              <min>
+                                                <Long fx:value="0" />
+                                              </min>
+                                              <value>
+                                                <Long fx:value="0" />
+                                              </value>
+                                            </Slider>
+                                          </children>
+                                        </VBox>
+                                        <VBox id="VBox" prefHeight="71.0" prefWidth="192.0" spacing="5.0">
+                                          <children>
+                                            <Label id="lbl_frame" fx:id="lbl_frame_arc" styleClass="zp-label" text="dic_lbl_frame_arc">
+                                              <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                              </VBox.margin>
+                                            </Label>
+                                            <Slider id="sliderBorder" fx:id="sliderBorder_Arc" minorTickCount="1" prefHeight="14.0" prefWidth="202.0" showTickLabels="true" showTickMarks="true">
+                                              <blockIncrement>
+                                                <Long fx:value="1" />
+                                              </blockIncrement>
+                                              <majorTickUnit>
+                                                <Long fx:value="1" />
+                                              </majorTickUnit>
+                                              <min>
+                                                <Long fx:value="0" />
+                                              </min>
+                                              <value>
+                                                <Long fx:value="0" />
+                                              </value>
+                                            </Slider>
+                                          </children>
+                                        </VBox>
+                                      </children>
+                                      <layoutX>
+                                        <Long fx:value="0" />
+                                      </layoutX>
+                                      <layoutY>
+                                        <Long fx:value="10" />
+                                      </layoutY>
+                                    </VBox>
+                                  </children>
+                                  <prefHeight>
+                                    <Long fx:value="-1" />
+                                  </prefHeight>
+                                </AnchorPane>
+                              </content>
+                              <prefHeight>
+                                <Long fx:value="120" />
+                              </prefHeight>
+                              <prefWidth>
+                                <Long fx:value="240" />
+                              </prefWidth>
+                            </ScrollPane>
+                          </children>
+                          <prefHeight>
+                            <Long fx:value="-1" />
+                          </prefHeight>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="tab_edit_color" text="dic_tab_edit_color">
+                      <content>
+                        <AnchorPane id="Content">
+                          <children>
+                            <ScrollPane layoutY="-2.0">
+                              <content>
+                                <AnchorPane id="AnchorPane">
+                                  <children>
+                                    <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                                      <children>
+                                        <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                          <children>
+                                            <Label text="Sepia">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Slider fx:id="sliderEffect_Sepia">
+                                              <max>
+                                                <Long fx:value="1" />
+                                              </max>
+                                            </Slider>
+                                          </children>
+                                        </HBox>
+                                        <Separator prefWidth="200.0" />
+                                        <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                          <children>
+                                            <Label text="Contrast">
+                                              <graphicTextGap>
+                                                <Long fx:value="4" />
+                                              </graphicTextGap>
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Slider fx:id="sliderEffect_Color_Contrast">
+                                              <max>
+                                                <Long fx:value="1" />
+                                              </max>
+                                            </Slider>
+                                          </children>
+                                        </HBox>
+                                        <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                          <children>
+                                            <Label text="Hue">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Slider fx:id="sliderEffect_Color_Hue">
+                                              <max>
+                                                <Long fx:value="1" />
+                                              </max>
+                                            </Slider>
+                                          </children>
+                                        </HBox>
+                                        <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                          <children>
+                                            <Label text="Brightness">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Slider fx:id="sliderEffect_Color_Brightness">
+                                              <max>
+                                                <Long fx:value="1" />
+                                              </max>
+                                            </Slider>
+                                          </children>
+                                        </HBox>
+                                        <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                          <children>
+                                            <Label text="Saturation">
+                                              <prefWidth>
+                                                <Long fx:value="70" />
+                                              </prefWidth>
+                                            </Label>
+                                            <Slider id="sliderEffect_Color_Brightness" fx:id="sliderEffect_Color_Saturation">
+                                              <max>
+                                                <Long fx:value="1" />
+                                              </max>
+                                            </Slider>
+                                          </children>
+                                        </HBox>
+                                      </children>
+                                      <layoutY>
+                                        <Long fx:value="10" />
+                                      </layoutY>
+                                    </VBox>
+                                  </children>
+                                  <prefHeight>
+                                    <Long fx:value="-1" />
+                                  </prefHeight>
+                                </AnchorPane>
+                              </content>
+                              <prefHeight>
+                                <Long fx:value="120" />
+                              </prefHeight>
+                              <prefWidth>
+                                <Long fx:value="240" />
+                              </prefWidth>
+                            </ScrollPane>
+                          </children>
+                          <minHeight>
+                            <Long fx:value="-1" />
+                          </minHeight>
+                          <minWidth>
+                            <Long fx:value="-1" />
+                          </minWidth>
+                          <prefHeight>
+                            <Long fx:value="-1" />
+                          </prefHeight>
+                          <prefWidth>
+                            <Long fx:value="-1" />
+                          </prefWidth>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="tab_edit_arrange" text="dic_tab_edit_arrange">
+                      <content>
+                        <AnchorPane id="Content">
+                          <children>
+                            <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                              <children>
+                                <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                  <children>
+                                    <Label fx:id="lbl_arrangeMirror" text="dic_lbl_arrangeMirror" />
+                                    <Button id="btn_select_all" minHeight="13.0" minWidth="13.0" mnemonicParsing="false" onAction="#handleArrange_Mirror" prefHeight="13.0" prefWidth="13.0" styleClass="zp-button, circleButton" text="dic_arrange_mirror" />
+                                  </children>
+                                </HBox>
+                              </children>
+                              <layoutX>
+                                <Long fx:value="0" />
+                              </layoutX>
+                              <layoutY>
+                                <Long fx:value="10" />
+                              </layoutY>
+                            </VBox>
+                          </children>
+                          <minHeight>
+                            <Long fx:value="-1" />
+                          </minHeight>
+                          <minWidth>
+                            <Long fx:value="-1" />
+                          </minWidth>
+                          <prefHeight>
+                            <Long fx:value="-1" />
+                          </prefHeight>
+                          <prefWidth>
+                            <Long fx:value="-1" />
+                          </prefWidth>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="tab_edit_effect" text="dic_tab_edit_effect">
+                      <content>
+                        <AnchorPane id="Content" visible="false">
+                          <children>
+                            <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                              <children>
+                                <Button id="btn_select_all" minHeight="13.0" minWidth="13.0" mnemonicParsing="false" onAction="#handleEffect_InnerShadow" prefHeight="13.0" prefWidth="13.0" styleClass="zp-button, circleButton" text="dic_trans_perspecitve" />
+                                <Button id="btn_select_all" minHeight="13.0" minWidth="13.0" mnemonicParsing="false" onAction="#handleTransform_Perspectiv" prefHeight="13.0" prefWidth="13.0" styleClass="zp-button, circleButton" text="dic_trans_perspecitve" />
+                                <Button id="btn_select_all" fx:id="btn_arrange_mirror" minHeight="13.0" minWidth="13.0" mnemonicParsing="false" onAction="#handleArrange_Mirror" prefHeight="13.0" prefWidth="13.0" styleClass="zp-button, circleButton" text="dic_arrange_mirror" />
+                                <Slider id="sliderEffect_Sepia" fx:id="sliderEffect_DropShadow_Radius">
+                                  <max>
+                                    <Long fx:value="100" />
+                                  </max>
+                                </Slider>
+                                <Slider id="sliderEffect_Sepia" fx:id="sliderEffect_pixalte">
+                                  <max>
+                                    <Long fx:value="100" />
+                                  </max>
+                                  <min>
+                                    <Long fx:value="1" />
+                                  </min>
+                                </Slider>
+                              </children>
+                              <layoutX>
+                                <Long fx:value="0" />
+                              </layoutX>
+                              <layoutY>
+                                <Long fx:value="10" />
+                              </layoutY>
+                            </VBox>
+                          </children>
+                          <minHeight>
+                            <Long fx:value="-1" />
+                          </minHeight>
+                          <minWidth>
+                            <Long fx:value="-1" />
+                          </minWidth>
+                          <prefHeight>
+                            <Long fx:value="-1" />
+                          </prefHeight>
+                          <prefWidth>
+                            <Long fx:value="-1" />
+                          </prefWidth>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                  </tabs>
+                </TabPane>
+              </children>
+              <prefHeight>
+                <Long fx:value="-1" />
+              </prefHeight>
+            </AnchorPane>
+          </top>
+        </BorderPane>
+      </children>
+      <layoutX>
+        <Long fx:value="10" />
+      </layoutX>
+      <layoutY>
+        <Long fx:value="10" />
+      </layoutY>
+    </VBox>
+  </children>
+  <maxHeight>
+    <Long fx:value="-1" />
+  </maxHeight>
+  <maxWidth>
+    <Long fx:value="-1" />
+  </maxWidth>
+  <minHeight>
+    <Long fx:value="-1" />
+  </minHeight>
+  <minWidth>
+    <Long fx:value="-1" />
+  </minWidth>
+  <padding>
+    <Insets left="10.0" top="5.0" />
+  </padding>
+  <prefHeight>
+    <Long fx:value="-1" />
+  </prefHeight>
+  <prefWidth>
+    <Long fx:value="-1" />
+  </prefWidth>
+</AnchorPane>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../resource/text.properties?>
+<?scenebuilder-stylesheet ../zp_prototype.css?>
+
+<AnchorPane id="AnchorPane" fx:id="pane_Main" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.MainPanelController">
+  <children>
+    <VBox id="VBox" layoutX="10.0" layoutY="10.0">
+      <children>
+        <Label fx:id="lbl_caption_measure" alignment="TOP_LEFT" styleClass="zp-heading" text="dic_caption_measure_X" textFill="#292929" wrapText="true">
+          <font>
+            <Font name="Segoe UI" size="22.0" />
+          </font>
+          <maxWidth>
+            <Long fx:value="-1" />
+          </maxWidth>
+          <prefWidth>
+            <Long fx:value="-1" />
+          </prefWidth>
+          <VBox.margin>
+            <Insets />
+          </VBox.margin>
+        </Label>
+        <Label fx:id="lbl_dimension_text" alignment="TOP_LEFT" styleClass="zp-text" text="dic_lbl_dimension_text" wrapText="true">
+          <prefHeight>
+            <Long fx:value="-1" />
+          </prefHeight>
+          <prefWidth>
+            <Long fx:value="220" />
+          </prefWidth>
+        </Label>
+        <VBox prefHeight="60.0" prefWidth="220.0">
+          <children>
+            <Label id="dic_lbl_medium" fx:id="lbl_medium" text="dic_lbl_medium">
+              <graphicTextGap>
+                <Long fx:value="4" />
+              </graphicTextGap>
+            </Label>
+            <ComboBox id="cb_medium" fx:id="cb_Medium" onAction="#handleMediumAction" prefHeight="21.0" prefWidth="220.0" />
+          </children>
+        </VBox>
+        <StackPane prefHeight="96.0" prefWidth="220.0">
+          <children>
+            <VBox id="VBox" fx:id="pane_fixedsize" spacing="5.0">
+              <children>
+                <Label id="label2" fx:id="lbl_fixedsize_text" prefHeight="25.0" prefWidth="100.0" styleClass="zp-label" text="dic_lbl_fixedsize_text" textFill="GREY">
+                  <font>
+                    <Font name="Verdana" size="15.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <ComboBox id="heightComboBox" fx:id="fixedsizeComboBox" editable="true" maxWidth="1.7976931348623157E308" onAction="#handleHeightComboBoxAction">
+                  <prefWidth>
+                    <Long fx:value="-1" />
+                  </prefWidth>
+                </ComboBox>
+              </children>
+            </VBox>
+            <VBox id="VBox" alignment="CENTER" prefHeight="174.0" spacing="5.0">
+              <children>
+                <VBox id="VBox" fx:id="pane_width_height" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <VBox id="VBox" spacing="5.0">
+                      <children>
+                        <Label id="label1" fx:id="lbl_width" font="$x1" prefHeight="25.0" prefWidth="100.0" styleClass="zp-label" text="dic_lbl_width_text" textFill="GREY">
+                          <graphicTextGap>
+                            <Long fx:value="4" />
+                          </graphicTextGap>
+                        </Label>
+                        <ComboBox fx:id="widthComboBox" editable="true" maxWidth="1.7976931348623157E308" onAction="#handleWidthComboBoxAction">
+                          <prefWidth>
+                            <Long fx:value="-1" />
+                          </prefWidth>
+                        </ComboBox>
+                      </children>
+                    </VBox>
+                    <VBox id="VBox" spacing="5.0">
+                      <children>
+                        <Label id="label2" fx:id="lbl_height" font="$x1" prefHeight="25.0" prefWidth="100.0" styleClass="zp-label" text="dic_lbl_height_text" textFill="GREY" />
+                        <ComboBox fx:id="heightComboBox" editable="true" maxWidth="1.7976931348623157E308" onAction="#handleHeightComboBoxAction">
+                          <prefWidth>
+                            <Long fx:value="-1" />
+                          </prefWidth>
+                        </ComboBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </VBox>
+                <VBox fx:id="splitter" prefHeight="25.0" prefWidth="200.0" />
+              </children>
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </VBox>
+          </children>
+        </StackPane>
+        <VBox prefHeight="60.0" prefWidth="220.0">
+          <children>
+            <HBox id="HBox" spacing="5.0">
+              <children>
+                <Label id="lbl_prcie_caption" fx:id="lbl_price_caption" text="dic_lbl_price_caption" />
+                <Label fx:id="lbl_price" styleClass="zp-label, zp-heading" />
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </children>
+      <prefHeight>
+        <Long fx:value="-1" />
+      </prefHeight>
+      <prefWidth>
+        <Long fx:value="220" />
+      </prefWidth>
+      <spacing>
+        <Long fx:value="20" />
+      </spacing>
+    </VBox>
+  </children>
+  <maxWidth>
+    <Long fx:value="-1" />
+  </maxWidth>
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+  </padding>
+  <prefWidth>
+    <Long fx:value="250" />
+  </prefWidth>
+  <stylesheets>
+    <URL value="@zp_prototype.css" />
+  </stylesheets>
+</AnchorPane>

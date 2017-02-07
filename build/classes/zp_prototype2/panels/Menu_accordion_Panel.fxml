@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" styleClass="headerPanel" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.Menu_accordion_PanelController">
+  <children>
+    <Accordion fx:id="accordion_menu" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0" styleClass="headerPanel">
+      <expandedPane>
+        <TitledPane id="titled_layout" fx:id="titled_imageEdit" styleClass="zp-label" text="dic_titled_caption_imageEdit">
+          <content>
+            <ScrollPane fx:id="imageEdit_ScrollPane" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" />
+          </content>
+        </TitledPane>
+      </expandedPane>
+      <panes>
+        <TitledPane id="fileManager" fx:id="titled_file" styleClass="zp-label" text="dic_titled_caption_file">
+          <content>
+            <ScrollPane fitToWidth="true" styleClass="headerPanel">
+              <content>
+                <fx:include fx:id="acc_mainPanel" source="Panel_FileManager.fxml" maxWidth="250.0">
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                  <prefHeight>
+                    <Long fx:value="-1" />
+                  </prefHeight>
+                </fx:include>
+              </content>
+              <prefHeight>
+                <Long fx:value="-1" />
+              </prefHeight>
+              <prefWidth>
+                <Long fx:value="-1" />
+              </prefWidth>
+            </ScrollPane>
+          </content>
+          <graphicTextGap>
+            <Long fx:value="4" />
+          </graphicTextGap>
+          <maxHeight>
+            <Long fx:value="-1" />
+          </maxHeight>
+        </TitledPane>
+        <TitledPane id="x1" fx:id="titled_measure" styleClass="zp-label" text="dic_titled_caption_measure">
+          <content>
+            <ScrollPane fitToWidth="true">
+              <content>
+                <fx:include fx:id="acc_mainPanel" source="MainPanel.fxml" snapToPixel="false" />
+              </content>
+            </ScrollPane>
+          </content>
+        </TitledPane>
+        <TitledPane fx:id="titled_layout" styleClass="zp-label" text="dic_titled_caption_layout">
+          <content>
+            <ScrollPane fitToWidth="true">
+              <content>
+                <fx:include fx:id="acc_grid" source="Mode_Grid_FXML.fxml" />
+              </content>
+            </ScrollPane>
+          </content>
+        </TitledPane>
+        <fx:reference source="titled_imageEdit" />
+        <TitledPane fx:id="titled_checkout" styleClass="zp-label" text="dic_titled_caption_checkout">
+          <content>
+            <ScrollPane fitToWidth="true" pannable="true">
+              <content>
+                <fx:include fx:id="acc_donePanel" source="DonePanel.fxml" maxWidth="200.0" />
+              </content>
+            </ScrollPane>
+          </content>
+        </TitledPane>
+      </panes>
+      <prefHeight>
+        <Long fx:value="645" />
+      </prefHeight>
+    </Accordion>
+    <!--
+            </content>
+            <layoutX>
+                <Long fx:value="0" />
+            </layoutX>
+            <layoutY>
+                <Long fx:value="0" />
+            </layoutY>
+            <minHeight>
+                <Long fx:value="450" />
+            </minHeight>
+            <prefHeight>
+                <Long fx:value="-1" />
+            </prefHeight>
+            <prefWidth>
+                <Long fx:value="-1" />
+            </prefWidth>
+            
+            
+          </ScrollPane>
+        -->
+  </children>
+  <maxWidth>
+    <Long fx:value="-1" />
+  </maxWidth>
+  <minHeight>
+    <Long fx:value="-1" />
+  </minHeight>
+  <minWidth>
+    <Long fx:value="-1" />
+  </minWidth>
+  <prefHeight>
+    <Long fx:value="-1" />
+  </prefHeight>
+  <prefWidth>
+    <Long fx:value="-1" />
+  </prefWidth>
+  <stylesheets>
+    <URL value="@../zp_prototype.css" />
+  </stylesheets>
+</AnchorPane>

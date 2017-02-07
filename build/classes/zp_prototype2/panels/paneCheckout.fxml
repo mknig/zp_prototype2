@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="588.327366232872" prefWidth="873.0890257358551" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml" fx:controller="zp_prototype2.panels.PaneCheckoutController">
+  <children>
+    <Button fx:id="btnBack" layoutY="4.0" mnemonicParsing="false" text="back" />
+    <ColorPicker layoutX="45.0" layoutY="4.0" />
+    <WebView fx:id="browser" layoutX="14.0" layoutY="52.0" prefHeight="391.0" prefWidth="521.0" />
+  </children>
+  <stylesheets>
+    <URL value="@panecheckout.css" />
+  </stylesheets>
+</AnchorPane>
